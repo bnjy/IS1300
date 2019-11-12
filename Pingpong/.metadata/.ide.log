@@ -1,0 +1,7 @@
+2019-11-12 17:33:34,077 [INFO] Activator:176 - 
+
+
+2019-11-12 17:33:34,079 [INFO] Activator:177 - !SESSION log4j initialized
+2019-11-12 17:33:34,887 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 
+2019-11-12 17:35:31,654 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] ***WARNING: Display must be created on main thread due to Cocoa restrictions. Use vmarg -XstartOnFirstThread
+2019-11-12 17:35:31,655 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] ***WARNING: Display must be created on main thread due to Cocoa restrictions. Use vmarg -XstartOnFirstThread
