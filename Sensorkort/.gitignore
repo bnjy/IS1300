@@ -1,0 +1,6 @@
+# Don't track content of these folders #
+.project
+.settings/
+.cproject
+.mxproject
+Debug/

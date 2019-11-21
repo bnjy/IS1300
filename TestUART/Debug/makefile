@@ -37,8 +37,8 @@ TestUART.list \
 all: TestUART.elf secondary-outputs
 
 # Tool invocations
-TestUART.elf: $(OBJS) $(USER_OBJS) C:\Users\benja\STM32CubeIDE\workspace_1.1.0\TestUART\STM32L476RGTX_FLASH.ld
-	arm-none-eabi-gcc -o "TestUART.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\benja\STM32CubeIDE\workspace_1.1.0\TestUART\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestUART.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+TestUART.elf: $(OBJS) $(USER_OBJS) /Users/benjamin/STM32CubeIDE/workspace_1.1.0/IS1300/TestUART/STM32L476RGTX_FLASH.ld
+	arm-none-eabi-gcc -o "TestUART.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/benjamin/STM32CubeIDE/workspace_1.1.0/IS1300/TestUART/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestUART.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
