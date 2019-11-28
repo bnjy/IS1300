@@ -29,6 +29,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "display.h"
+#include "test.h"
 
 /* USER CODE END Includes */
 
@@ -39,6 +41,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define RUN_TEST_PROGRAM
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -100,15 +103,27 @@ int main(void)
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
 
+//#ifdef RUN_TEST_PROGRAM
+//	  test_program();
+//#else
+//
+//#endif
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+#ifdef RUN_TEST_PROGRAM
+	  test_program();
+#else
+
+#endif
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
   }
   /* USER CODE END 3 */
 }
