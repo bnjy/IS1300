@@ -22,13 +22,17 @@
 #define ROMA 0x00
 #define ROMB 0x04
 #define ROMC 0x0C
+#define LCD_HOME_L1	0x80
+#define LINE1 0
+#define LINE2 LINE1+0x20
+#define LINE3 LINE1+0x40
+#define	LINE4 LINE1+0x60
 
-void lcd_send_data_1(uint8_t rw, uint8_t rs, uint8_t data);
 void lcd_send_data(uint8_t data);
 void lcd_send_inst(uint8_t inst);
 void lcd_initialize(void);
 void lcd_set_position(uint8_t position);
-void lcd_write_string(char* string);
+void lcd_write_string(uint8_t* string);
 void lcd_setROM(void);
 void lcd_clear(void);
 

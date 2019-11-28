@@ -11,14 +11,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void test_program(void);
+void test_program_lcd(void);
 void test_write_char(void);
-void test_backlight_color(void);
+void test_backlight_colors(void);
 void test_lcd_initialize(void);
 void test_lcd_rom(void);
 void test_write_string(void);
-void test_screen_colors(void);
 void test_lcd_clear(void);
+void test_lcd_set_position(void);
 
 
 
