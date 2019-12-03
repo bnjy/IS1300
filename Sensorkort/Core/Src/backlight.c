@@ -8,15 +8,8 @@
  *
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "adc.h"
-#include "spi.h"
-#include "usart.h"
+#include "backlight.h"
 #include "gpio.h"
-#include "display.h"
-#include "lcd.h"
-#include "string.h"
 
 /**
  @brief backlight_set_white, sets the lcd backlight to white backlight color

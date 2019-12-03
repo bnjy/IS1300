@@ -5,23 +5,9 @@
  *      Author: benjamin
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "main.h"
-#include "adc.h"
-#include "i2c.h"
-#include "rtc.h"
-#include "spi.h"
-#include "usart.h"
+#include "test_lcd.h"
 #include "gpio.h"
-#include "display.h"
 #include "lcd.h"
-#include "backlight.h"
-#include "test.h"
-#include "string.h"
-
-
-char *test1 = "Hello world!\n\r";
 
 /**
  @brief test_program, runs all the program test functions.
@@ -45,6 +31,8 @@ void test_program_lcd(void){
  */
 void test_write_string(void){
 	lcd_write_string("Wassup");
+	uint8_t* test_write_string = "test_write_string succeed\n\r";
+	transmit(test_write_string);
 }
 
 
@@ -62,6 +50,8 @@ void test_write_char(void){
 	lcd_send_data(0x61);
 	lcd_send_data(0x70);
 	lcd_send_data(0x3F);
+	uint8_t* test_write_char = "test_write_char succeed\n\r";
+	transmit(test_write_char);
 }
 
 /**
@@ -79,6 +69,9 @@ void test_backlight_colors(void){
 	HAL_GPIO_WritePin(GPIOC, Disp_Green_Pin, GPIO_PIN_SET);
 	HAL_Delay(1000);
 	HAL_GPIO_WritePin(GPIOC, Disp_Green_Pin, GPIO_PIN_RESET);
+
+	uint8_t* test_backlight_colors = "test_backlight_colors succeed\n\r";
+	transmit(test_backlight_colors);
 }
 
 /**
@@ -88,7 +81,8 @@ void test_backlight_colors(void){
  */
 void test_lcd_initialize(void){
 	lcd_initialize();
-	HAL_UART_Transmit(&huart5, (uint8_t*)test1, strlen(test1), 5000);
+	uint8_t* test_lcd_initialize = "test_lcd_initialize succeed\n\r";
+	transmit(test_lcd_initialize);
 }
 
 /**
@@ -98,6 +92,8 @@ void test_lcd_initialize(void){
  */
 void test_lcd_rom(void){
 	lcd_setROM();
+	uint8_t* test_lcd_rom = "test_lcd_rom succeed\n\r";
+	transmit(test_lcd_rom);
 }
 
 /**
@@ -107,6 +103,8 @@ void test_lcd_rom(void){
  */
 void test_lcd_clear(void){
 	lcd_clear();
+	uint8_t* test_lcd_clear = "test_lcd_clear succeed\n\r";
+	transmit(test_lcd_clear);
 }
 
 /**
@@ -128,6 +126,8 @@ void test_lcd_set_position(void){
 	lcd_set_position(LINE4);
 	lcd_write_string("Line 4");
 	HAL_Delay(5000);
+	uint8_t* test_lcd_set_position = "test_lcd_set_position succeed\n\r";
+	transmit(test_lcd_set_position);
 }
 
 

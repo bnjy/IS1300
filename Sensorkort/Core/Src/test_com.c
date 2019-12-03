@@ -5,30 +5,40 @@
  *      Author: benjamin
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "main.h"
-#include "adc.h"
-#include "i2c.h"
-#include "rtc.h"
-#include "spi.h"
-#include "usart.h"
-#include "gpio.h"
-#include "display.h"
+#include "test_com.h"
 #include "lcd.h"
-#include "backlight.h"
-#include "test.h"
-#include "string.h"
-#include "communication.h"
+#include "rtc.h"
 
 void test_program_uart(void){
 	lcd_initialize();
-	test_recieve();
+	lcd_clear();
+	test_set_time();
+	test_get_time();
+//	test_recieve();
 //	test_transmit();
 }
 
 /**
- @brief test_print_to_lcd_from_computer, takes 3 chars from pc and prints it on the display.
+ @brief test_get_current_time, calls function set_time in rtc.c and sets the time from user input.
+ @param void
+ @return void
+ */
+void test_set_time(void){
+	set_time();
+}
+
+/**
+ @brief test_print_current_time, calls function get_time in rtc.c and prints the current time in the RTC module.
+ @param void
+ @return void
+ */
+void test_get_time(void){
+	get_time();
+}
+
+
+/**
+ @brief test_transmit, prints string "test uart transmit" to uart serial device.
  @param void
  @return void
  */
@@ -37,8 +47,14 @@ void test_transmit(void){
 	transmit(string);
 }
 
+/**
+ @brief test_recieve, tests uart recieve() function.
+ @param void
+ @return void
+ */
 void test_recieve(void){
-	uint8_t* p = recieve();
+	uint8_t* p;
+	p = recieve();
 	lcd_set_position(LINE1);
 	lcd_write_string(p);
 

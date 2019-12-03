@@ -10,8 +10,9 @@
 
 #define BUFFERSIZE 10
 
-void get_current_time();
-void transmit(uint8_t* string);
+#include <stdint.h>
 
+void transmit(uint8_t* string);
+uint8_t * recieve();
 
 #endif /* INC_COMMUNICATION_H_ */

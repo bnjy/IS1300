@@ -33,6 +33,9 @@
 extern RTC_HandleTypeDef hrtc;
 
 /* USER CODE BEGIN Private defines */
+uint8_t * char_converter(uint8_t array[]);
+void get_time(void);
+void set_time(void);
 
 /* USER CODE END Private defines */
 

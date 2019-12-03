@@ -8,6 +8,9 @@
 #ifndef INC_LCD_H_
 #define INC_LCD_H_
 
+#include <stdio.h>
+#include <stdlib.h>
+
 #define FUNCTION_SET_1 0x3A
 #define EXTENDED_FUNCTION_SET 0x09
 #define ENTRY_MODE_SET 0x06
@@ -28,14 +31,13 @@
 #define LINE3 LINE1+0x40
 #define	LINE4 LINE1+0x60
 
-void lcd_send_data(uint8_t data);
 void lcd_send_inst(uint8_t inst);
+void lcd_send_data(uint8_t data);
 void lcd_initialize(void);
 void lcd_set_position(uint8_t position);
-void lcd_write_string(uint8_t* string);
-void lcd_setROM(void);
 void lcd_clear(void);
-
+void lcd_setROM(void);
+void lcd_write_string(uint8_t* string);
 
 
 #endif /* INC_LCD_H_ */

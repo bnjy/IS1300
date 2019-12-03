@@ -29,8 +29,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "display.h"
-#include "test.h"
+#include "lcd.h"
+#include "test_lcd.h"
+#include "test_com.h"
 
 /* USER CODE END Includes */
 
@@ -102,26 +103,24 @@ int main(void)
   MX_ADC1_Init();
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
-
 #ifdef RUN_TEST_PROGRAM
-//	  test_program_lcd();
+	  test_program_lcd();
 	  test_program_uart();
 #else
 
-#endif
+  lcd_initialize();
+  lcd_clear();
+  set_time();
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
+#endif
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-//#ifdef RUN_TEST_PROGRAM
-////	  test_program_lcd();
-//	  test_program_uart();
-//#else
-//
-//#endif
+	  get_time();
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
