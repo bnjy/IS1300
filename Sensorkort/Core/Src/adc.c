@@ -21,6 +21,22 @@
 #include "adc.h"
 
 /* USER CODE BEGIN 0 */
+#include "usart.h"
+#include "backlight.h"
+
+/**
+ @brief get_adc_value, starts ADC and reads the analog signal and returns it to @param ADCvalue.
+ @param  void
+ @return ADCvalue, variable to store the analog value.
+ */
+uint32_t get_adc_value(void){
+	uint32_t ADCvalue;
+	HAL_ADC_Start(&hadc1);
+	if(HAL_ADC_PollForConversion(&hadc1, 100) == HAL_OK){
+		ADCvalue = HAL_ADC_GetValue(&hadc1);
+	}
+	return ADCvalue;
+}
 
 /* USER CODE END 0 */
 
@@ -39,7 +55,7 @@ void MX_ADC1_Init(void)
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
   hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
-  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  hadc1.Init.EOCSelection = ADC_EOC_SEQ_CONV;
   hadc1.Init.LowPowerAutoWait = DISABLE;
   hadc1.Init.ContinuousConvMode = DISABLE;
   hadc1.Init.NbrOfConversion = 1;

@@ -16,6 +16,7 @@ void test_lcd_initialize(void);
 void test_lcd_rom(void);
 void test_lcd_clear(void);
 void test_lcd_set_position(void);
+void test_set_backlight(void);
 
 
 #endif /* INC_TEST_LCD_H_ */

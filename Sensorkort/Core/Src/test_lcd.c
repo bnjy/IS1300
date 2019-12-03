@@ -8,6 +8,7 @@
 #include "test_lcd.h"
 #include "gpio.h"
 #include "lcd.h"
+#include "adc.h"
 
 /**
  @brief test_program, runs all the program test functions.
@@ -18,9 +19,20 @@ void test_program_lcd(void){
 	test_lcd_initialize();
 	test_lcd_rom();
 	test_lcd_clear();
-	test_write_string();
-	HAL_Delay(1800);
-	test_lcd_set_position();
+//	test_write_string();
+//	HAL_Delay(1800);
+//	test_lcd_set_position();
+	test_set_backlight();
+}
+/**
+ *
+ */
+void test_set_backlight(void){
+	HAL_GPIO_WritePin(GPIOC, Disp_White_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOC, Disp_Green_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOC, Disp_Red_Pin, GPIO_PIN_SET);
+
+	get_adc_value();
 }
 
 /**

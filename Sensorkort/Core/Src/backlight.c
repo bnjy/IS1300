@@ -10,6 +10,19 @@
 
 #include "backlight.h"
 #include "gpio.h"
+#include "tim.h"
+#include "adc.h"
+
+/**
+ @brief backlight_set_brightness, gets a value from function get_adc_value and sets the backlight brightness with that value.
+ uses PWM/TIM3 to be able to set the display brightness.
+ @param void
+ @return void
+ */
+void backlight_set_brightnes(void){
+	uint32_t ADCval = get_adc_value();
+	htim3.Instance->CCR2 = ADCval;
+}
 
 /**
  @brief backlight_set_white, sets the lcd backlight to white backlight color

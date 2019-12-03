@@ -80,8 +80,8 @@ void Error_Handler(void);
 #define Acc_Int2_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14
 #define TCK_GPIO_Port GPIOA
-#define Disp_Reset_Pin GPIO_PIN_15
-#define Disp_Reset_GPIO_Port GPIOA
+#define Disp_RESET_Pin GPIO_PIN_15
+#define Disp_RESET_GPIO_Port GPIOA
 #define Disp_Green_Pin GPIO_PIN_10
 #define Disp_Green_GPIO_Port GPIOC
 #define Disp_White_Pin GPIO_PIN_11

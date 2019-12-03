@@ -8,6 +8,7 @@
 #include "lcd.h"
 #include "gpio.h"
 #include "spi.h"
+#include "backlight.h"
 
 uint8_t start = 0;
 uint8_t first = 0;
@@ -78,8 +79,6 @@ void lcd_initialize(void){
 	lcd_send_inst(CONTRAST_SET);
 	lcd_send_inst(FUNCTION_SET_3);
 	lcd_send_inst(DISPLAY_ON);
-	lcd_clear();
-	backlight_set_white();
 }
 
 /**
