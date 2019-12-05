@@ -1,11 +1,9 @@
-/*
- * backlight.c
- *
- *  	Created on: Nov 27, 2019
- *      Author: Benjamin Roth
- *      Brief: Display backlight logic. In this file functions are declared to be able to set the display
- *      background color and set the display contrast with timer PWM.
- *
+/**
+ * @file backlight.c
+ * @author Benjamin Roth
+ * @date Nov 27, 2019
+ * @brief Display backlight logic. In this file functions are declared to be able to set the display
+ * background color and set the display contrast with timer PWM.
  */
 
 #include "backlight.h"

@@ -1,8 +1,8 @@
-/*
- * backlight.h
- *
- *  Created on: Nov 27, 2019
- *      Author: benjamin
+/**
+ * @file backlight.h
+ * @author Benjamin Roth
+ * @date Nov 27, 2019
+ * @brief header file to backlight.c
  */
 
 #ifndef INC_BACKLIGHT_H_

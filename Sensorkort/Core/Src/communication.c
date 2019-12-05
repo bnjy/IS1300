@@ -1,8 +1,8 @@
-/*
- * communication.c
- *
- *  Created on: Nov 28, 2019
- *      Author: benjamin
+/**
+ * @file communication.c
+ * @author Benjamin Roth
+ * @date Nov 27, 2019
+ * @brief handles communication (transmit/recieve) with UART. Prepared to use interupts, but is not used.
  */
 
 #include "communication.h"

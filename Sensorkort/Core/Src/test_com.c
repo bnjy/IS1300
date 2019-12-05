@@ -1,61 +1,43 @@
-/*
- * test_com.c
- *
- *  Created on: Nov 28, 2019
- *      Author: benjamin
+/**
+ * @file test_com.c
+ * @author Benjamin Roth
+ * @date Nov 27, 2019
+ * @brief a test program to test functions for USB communication.
  */
 
 #include "test_com.h"
 #include "lcd.h"
 #include "rtc.h"
 
-void test_program_uart(void){
-	lcd_initialize();
-	lcd_clear();
-	test_set_time();
-	test_get_time();
-//	test_recieve();
-//	test_transmit();
-}
-
 /**
- @brief test_get_current_time, calls function set_time in rtc.c and sets the time from user input.
+ @brief test_program_communication, runs all the program communication test functions.
  @param void
  @return void
  */
-void test_set_time(void){
-	set_time();
+void test_program_communication(void){
+	test_transmit_recieve();
 }
 
 /**
- @brief test_print_current_time, calls function get_time in rtc.c and prints the current time in the RTC module.
+ @brief test_transmit_recieve, tests uart recieve() and transmit() functions. Function prints a message
+ to user via serial communication, to make the user print 10 chars. The 10 chars that the user types is
+ recieved and shown (lcd_write_string) on the display. Test is seen as successful if string
+ "test_transmit_recieve succeed" is printed via serial communication.
  @param void
  @return void
  */
-void test_get_time(void){
-	get_time();
-}
-
-
-/**
- @brief test_transmit, prints string "test uart transmit" to uart serial device.
- @param void
- @return void
- */
-void test_transmit(void){
-	uint8_t * string = "test uart transmit";
+void test_transmit_recieve(void){
+	uint8_t * string = "type 10 chars to the display\n\r";
 	transmit(string);
-}
 
-/**
- @brief test_recieve, tests uart recieve() function.
- @param void
- @return void
- */
-void test_recieve(void){
 	uint8_t* p;
 	p = recieve();
+	lcd_clear();
 	lcd_set_position(LINE1);
 	lcd_write_string(p);
+	HAL_Delay(3000);
+
+	uint8_t * test = "test_transmit_recieve succeed\n\r";
+	transmit(test);
 
 }

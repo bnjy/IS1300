@@ -1,8 +1,11 @@
-/*
- * lcd.c
- *
- *  Created on: Nov 27, 2019
- *      Author: benjamin
+/**
+ * @file lcd.c
+ * @author Benjamin Roth
+ * @date Nov 27, 2019
+ * @brief a program to handle instructions and data to EADOGS104-A
+ * In lcd.c there are functions to setup/initialize, clear, read instructions and data,
+ * set position, write etc. This program covers everything that is needed to be able to
+ * handle the display.
  */
 
 #include "lcd.h"
@@ -17,7 +20,7 @@ uint8_t buffer[3];
 
 /**
  @brief lcd_send_data, setup of display bitstream for data, with RS and RW variable set to 0.
- 	 	 	 	 	   SID Input bitstream to be set: 1111 10(RW)0(RS)0 D0D1D2D3 0000 D4D5D6D7 0000
+ SID Input bitstream to be set: 1111 10(RW)0(RS)0 D0D1D2D3 0000 D4D5D6D7 0000
  @param inst, instruction to be sent to the display
  */
 void lcd_send_inst(uint8_t inst){

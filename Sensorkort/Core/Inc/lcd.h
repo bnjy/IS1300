@@ -1,8 +1,8 @@
-/*
- * lcd.h
- *
- *  Created on: Nov 27, 2019
- *      Author: benjamin
+/**
+ * @file lcd.h
+ * @author Benjamin Roth
+ * @date Nov 27, 2019
+ * @brief header file to lcd.c
  */
 
 #ifndef INC_LCD_H_

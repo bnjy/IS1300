@@ -35,6 +35,7 @@
 #include "test_lcd.h"
 #include "test_com.h"
 #include "test_adc.h"
+#include "test_rtc.h"
 
 /* USER CODE END Includes */
 
@@ -45,7 +46,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#undef RUN_TEST_PROGRAM
+#define RUN_TEST_PROGRAM
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -112,14 +113,14 @@ int main(void)
 
 #ifdef RUN_TEST_PROGRAM
 	test_program_lcd();
-	test_program_uart();
 	test_program_adc();
+	test_program_communication();
+	test_program_rtc();
 #else
 	lcd_initialize();
 	lcd_clear();
 	set_time();
 
-#endif
 
 	/* USER CODE END 2 */
 
@@ -135,6 +136,7 @@ int main(void)
 		/* USER CODE BEGIN 3 */
 
 	}
+#endif
 	/* USER CODE END 3 */
 }
 

@@ -1,8 +1,8 @@
-/*
- * communication.h
- *
- *  Created on: Nov 28, 2019
- *      Author: benjamin
+/**
+ * @file communication.h
+ * @author Benjamin Roth
+ * @date Nov 27, 2019
+ * @brief header file to communication.c
  */
 
 #ifndef INC_COMMUNICATION_H_
