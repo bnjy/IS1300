@@ -43,7 +43,7 @@ void lcd_send_inst(uint8_t inst){
 }
 /**
  @brief lcd_send_data, setup of display bitstream for data, with RS variable set to 1.
- 	 	 	 	 	   SID Input bitstream to be set: 1111 10(RW)1(RS)0 D0D1D2D3 0000 D4D5D6D7 0000
+ SID Input bitstream to be set: 1111 10(RW)1(RS)0 D0D1D2D3 0000 D4D5D6D7 0000
  @param data, data byte to be sent to the display
  @return void
  */

@@ -46,7 +46,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define RUN_TEST_PROGRAM
+#undef RUN_TEST_PROGRAM
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -121,6 +121,7 @@ int main(void)
 	lcd_clear();
 	set_time();
 
+#endif
 
 	/* USER CODE END 2 */
 
@@ -136,7 +137,6 @@ int main(void)
 		/* USER CODE BEGIN 3 */
 
 	}
-#endif
 	/* USER CODE END 3 */
 }
 

@@ -32,10 +32,11 @@ uint8_t *ascii_array;
 uint8_t time[8];
 
 /**
- @brief set_time, ask the user for input to set the RTC. The input is placed in buffer @param hhmmss.
- Calls the function char_converter to convert the chars to ASCII. Time is then set with RTC_TimeTypeDef struct
- variables.
+ @brief set_time, ask the user for input to set the RTC. The input is placed in buffer called hhmmss.
+ Calls the function char_converter to convert the chars from ascii to thier numerical values. Time is
+ then set with RTC_TimeTypeDef struct variables.
  @param void
+ @return void
  */
 void set_time(void){
 	RTC_TimeTypeDef sTime;
@@ -60,6 +61,11 @@ void set_time(void){
 	HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 }
 
+/**
+ @brief char_converter, converts ascii chars to their numeric values.
+ @param array[], an array with the current input of time by the user.
+ @return new, a new array with converted ascii chars to be printed.
+ */
 uint8_t * char_converter(uint8_t array[]){
 	static uint8_t new[3];
 	for(int i = 0; i < 3; i++){
@@ -69,23 +75,24 @@ uint8_t * char_converter(uint8_t array[]){
 }
 
 /**
- @brief get_time, gets the current time value with function HAL_RTC_GetTime.  Stores the time values on
+ @brief get_time, gets the current time value with function HAL_RTC_GetTime. Stores the time values on
  char buffer and prints it to the lcd.
  @param void
+ @return void
  */
 void get_time(void){
 	RTC_TimeTypeDef gTime;
 	RTC_DateTypeDef gDate;
 
-	//Get the RTC current time and date
+	// Get the RTC current time and date
 	HAL_RTC_GetTime(&hrtc, &gTime, RTC_FORMAT_BIN);
 	HAL_RTC_GetDate(&hrtc, &gDate, RTC_FORMAT_BIN);
 
+	// returns a formated string
 	sprintf((char *)time, "%02d:%02d:%02d", gTime.Hours, gTime.Minutes, gTime.Seconds);
 
 	lcd_set_position(LINE1);
 	lcd_write_string(time);
-
 }
 
 /* USER CODE END 0 */

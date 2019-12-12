@@ -22,6 +22,7 @@
 
 /* USER CODE BEGIN 0 */
 
+
 /* USER CODE END 0 */
 
 I2C_HandleTypeDef hi2c3;
