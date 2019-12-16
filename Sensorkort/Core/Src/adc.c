@@ -25,9 +25,9 @@
 #include "backlight.h"
 
 /**
- @brief get_adc_value, starts ADC and reads the analog signal and returns it to @param ADCvalue.
- @param  void
- @return ADCvalue, variable to store the analog value.
+ * @brief get_adc_value starts ADC and reads the analog signal and returns it to @param ADCvalue.
+ * @param  void
+ * @return ADCvalue variable to store the analog value.
  */
 uint32_t get_adc_value(void){
 	uint32_t ADCvalue;

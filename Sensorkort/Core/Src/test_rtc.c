@@ -9,9 +9,9 @@
 
 
 /**
- @brief test_program_rtc, runs all the program rtc test functions.
- @param void
- @return void
+ * @brief test_program_rtc runs all the program rtc test functions.
+ * @param void
+ * @return void
  */
 void test_program_rtc(void){
 	lcd_clear();
@@ -20,18 +20,18 @@ void test_program_rtc(void){
 }
 
 /**
- @brief test_set_time, calls function set_time() that asks the user for a input to set the RTC.
- @param void
- @return void
+ * @brief test_set_time calls function set_time() that asks the user for a input to set the RTC.
+ * @param void
+ * @return void
  */
 void test_set_time(void){
 	set_time();
 }
 
 /**
- @brief test_get_time, calls function get_time() that displays the time on the display for 10 seconds.
- @param void
- @return void
+ * @brief test_get_time calls function get_time() that displays the time on the display for 10 seconds.
+ * @param void
+ * @return void
  */
 void test_get_time(void){
 	int i = 0;

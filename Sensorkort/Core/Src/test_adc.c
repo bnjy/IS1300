@@ -10,20 +10,20 @@
 char adc_str[10];
 
 /**
- @brief test_program_adc, runs all the program adc test functions.
- @param void
- @return void
+ * @brief test_program_adc runs all the program adc test functions.
+ * @param void
+ * @return void
  */
 void test_program_adc(void){
 	test_get_adc_value();
 }
 
 /**
- @brief test_get_adc_value, calls function get_adc_value that starts adc and read the analog signal and returns
- a int with the value. The value is then printed on the display. Test is seen as successful if the value
- and "test_write_string succeed" is printed via serial communication.
- @param void
- @return void
+ * @brief test_get_adc_value calls function get_adc_value that starts adc and read the analog signal and returns
+ * a int with the value. The value is then printed on the display. Test is seen as successful if the value
+ * and "test_write_string succeed" is printed via serial communication.
+ * @param void
+ * @return void
  */
 void test_get_adc_value(void){
 	lcd_initialize();

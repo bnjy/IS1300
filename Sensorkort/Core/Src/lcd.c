@@ -19,9 +19,9 @@ uint8_t second = 0;
 uint8_t buffer[3];
 
 /**
- @brief lcd_send_data, setup of display bitstream for data, with RS and RW variable set to 0.
- SID Input bitstream to be set: 1111 10(RW)0(RS)0 D0D1D2D3 0000 D4D5D6D7 0000
- @param inst, instruction to be sent to the display
+ * @brief lcd_send_data setup of display bitstream for data, with RS and RW variable set to 0.
+ * SID Input bitstream to be set: 1111 10(RW)0(RS)0 D0D1D2D3 0000 D4D5D6D7 0000
+ * @param inst instruction to be sent to the display
  */
 void lcd_send_inst(uint8_t inst){
 	uint8_t startByte = 0x1F; 		//Send 5 synchronisation bits, RS = 0, R/W = 0. Byte(LSB): 1111 1000
@@ -42,10 +42,10 @@ void lcd_send_inst(uint8_t inst){
 	HAL_GPIO_WritePin(GPIOB, Disp_PB12_Pin, GPIO_PIN_SET);
 }
 /**
- @brief lcd_send_data, setup of display bitstream for data, with RS variable set to 1.
- SID Input bitstream to be set: 1111 10(RW)1(RS)0 D0D1D2D3 0000 D4D5D6D7 0000
- @param data, data byte to be sent to the display
- @return void
+ * @brief lcd_send_data setup of display bitstream for data, with RS variable set to 1.
+ * SID Input bitstream to be set: 1111 10(RW)1(RS)0 D0D1D2D3 0000 D4D5D6D7 0000
+ * @param data data byte to be sent to the display
+ * @return void
  */
 void lcd_send_data(uint8_t data){
 	uint8_t startByte = 0x5F; 		//Send 5 synchronisation bits, RS = 1, R/W = 0. Byte(LSB): 1111 1010
@@ -66,9 +66,9 @@ void lcd_send_data(uint8_t data){
 }
 
 /**
- @brief display_initialize, display initialisation according to the example in display data sheet.
- @param void
- @return void
+ * @brief display_initialize display initialisation according to the example in display data sheet.
+ * @param void
+ * @return void
  */
 void lcd_initialize(void){
 	lcd_send_inst(FUNCTION_SET_1);
@@ -85,27 +85,27 @@ void lcd_initialize(void){
 }
 
 /**
- @brief sets the display position where the data should be printed.
- @param position what line on the display that should be used.
- return void
+ * @brief sets the display position where the data should be printed.
+ * @param position what line on the display that should be used.
+ * return void
  */
 void lcd_set_position(uint8_t position){
 	lcd_send_inst(LCD_HOME_L1 + position);
 }
 
 /**
- @brief lcd_clear, clear the display.
- @param void
- @return void
+ * @brief lcd_clear clear the display.
+ * @param void
+ * @return void
  */
 void lcd_clear(void){
 	lcd_send_inst(0x01);
 }
 
 /**
- @brief lcd_setROM, sets the display ROM.
- @param void
- @return void
+ * @brief lcd_setROM sets the display ROM.
+ * @param void
+ * @return void
  */
 void lcd_setROM(void){
 	lcd_send_inst(FUNCTION_SET_1);
@@ -115,9 +115,9 @@ void lcd_setROM(void){
 }
 
 /**
- @brief lcd_write_string, send a buffer of chars to be printed by function lcd_send_data.
- @param string, a pointer to the string buffer.
- @return void
+ * @brief lcd_write_string send a buffer of chars to be printed by function lcd_send_data.
+ * @param string a pointer to the string buffer.
+ * @return void
  */
 void lcd_write_string(uint8_t* string){
 	do

@@ -11,19 +11,19 @@
 ITStatus UartReady = RESET;
 
 /**
- @brief transmit, takes a string pointer and transmits the string via HAL function HAL_UART_Transmit.
- @param string, a string pointer.
- @return void
+ * @brief transmit takes a string pointer and transmits the string via HAL function HAL_UART_Transmit.
+ * @param string a string pointer.
+ * @return void
  */
 void transmit(uint8_t* string){
 	HAL_UART_Transmit(&huart5, (uint8_t *)string, strlen(string), 5000);
 }
 
 /**
- @brief recieve, function that recieves input from user via UART USB. Uses HAL function HAL_UART_Receive with
- a maximum buffer size of BUFFERSIZE, which relates to the size of the lcd display.
- @param void
- @return buffer
+ * @brief recieve function that recieves input from user via UART USB. Uses HAL function HAL_UART_Receive with
+ * a maximum buffer size of BUFFERSIZE, which relates to the size of the lcd display.
+ * @param void
+ * @return buffer
  */
 uint8_t * recieve(){
 	static uint8_t buffer[BUFFERSIZE];

@@ -1,20 +1,7 @@
 /**
-  ******************************************************************************
-  * File Name          : RTC.c
-  * Description        : This file provides code for the configuration
-  *                      of the RTC instances.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
-  *
-  ******************************************************************************
+  * @file RTC.c
+  * @brief This file provides code for the configuration
+  * of the RTC instances.
   */
 
 /* Includes ------------------------------------------------------------------*/
@@ -32,11 +19,11 @@ uint8_t *ascii_array;
 uint8_t time[8];
 
 /**
- @brief set_time, ask the user for input to set the RTC. The input is placed in buffer called hhmmss.
- Calls the function char_converter to convert the chars from ascii to thier numerical values. Time is
- then set with RTC_TimeTypeDef struct variables.
- @param void
- @return void
+ * @brief set_time ask the user for input to set the RTC. The input is placed in buffer called hhmmss.
+ * Calls the function char_converter to convert the chars from ascii to thier numerical values. Time is
+ * then set with RTC_TimeTypeDef struct variables.
+ * @param void
+ * @return void
  */
 void set_time(void){
 	RTC_TimeTypeDef sTime;
@@ -62,9 +49,9 @@ void set_time(void){
 }
 
 /**
- @brief char_converter, converts ascii chars to their numeric values.
- @param array[], an array with the current input of time by the user.
- @return new, a new array with converted ascii chars to be printed.
+ * @brief char_converter, converts ascii chars to their numeric values.
+ * @param array[], an array with the current input of time by the user.
+ * @return new, a new array with converted ascii chars to be printed.
  */
 uint8_t * char_converter(uint8_t array[]){
 	static uint8_t new[3];
@@ -75,10 +62,10 @@ uint8_t * char_converter(uint8_t array[]){
 }
 
 /**
- @brief get_time, gets the current time value with function HAL_RTC_GetTime. Stores the time values on
- char buffer and prints it to the lcd.
- @param void
- @return void
+ * @brief get_time, gets the current time value with function HAL_RTC_GetTime. Stores the time values on
+ * char buffer and prints it to the lcd.
+ * @param void
+ * @return void
  */
 void get_time(void){
 	RTC_TimeTypeDef gTime;

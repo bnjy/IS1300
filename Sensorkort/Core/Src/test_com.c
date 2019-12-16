@@ -10,21 +10,21 @@
 #include "rtc.h"
 
 /**
- @brief test_program_communication, runs all the program communication test functions.
- @param void
- @return void
+ * @brief test_program_communication runs all the program communication test functions.
+ * @param void
+ * @return void
  */
 void test_program_communication(void){
 	test_transmit_recieve();
 }
 
 /**
- @brief test_transmit_recieve, tests uart recieve() and transmit() functions. Function prints a message
- to user via serial communication, to make the user print 10 chars. The 10 chars that the user types is
- recieved and shown (lcd_write_string) on the display. Test is seen as successful if string
- "test_transmit_recieve succeed" is printed via serial communication.
- @param void
- @return void
+ * @brief test_transmit_recieve tests uart recieve() and transmit() functions. Function prints a message
+ * to user via serial communication, to make the user print 10 chars. The 10 chars that the user types is
+ * recieved and shown (lcd_write_string) on the display. Test is seen as successful if string
+ * "test_transmit_recieve succeed" is printed via serial communication.
+ * @param void
+ * @return void
  */
 void test_transmit_recieve(void){
 	uint8_t * string = "type 10 chars to the display\n\r";
